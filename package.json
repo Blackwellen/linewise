@@ -1,0 +1,25 @@
+{
+  "name": "linewise-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "assets": "python scripts/build_assets.py"
+  },
+  "dependencies": {
+    "aws4fetch": "^1.0.20",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1",
+    "stripe": "^23.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "playwright-core": "^1.65.1",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Barlow;src:url(file:///C:/Users/PC/AppData/Local/Temp/claude/6e60ed90514f9a6a/92185747-57a6-40fb-ba41-cf24f325ddad/scratchpad/stickman/ebook/build/../fonts/Barlow-SemiBold.ttf);font-weight:600}
+@font-face{font-family:BarlowSC;src:url(file:///C:/Users/PC/AppData/Local/Temp/claude/6e60ed90514f9a6a/92185747-57a6-40fb-ba41-cf24f325ddad/scratchpad/stickman/ebook/build/../fonts/BarlowSC-800.ttf);font-weight:800}
+@font-face{font-family:Anton;src:url(file:///C:/Users/PC/AppData/Local/Temp/claude/6e60ed90514f9a6a/92185747-57a6-40fb-ba41-cf24f325ddad/scratchpad/stickman/ebook/build/../fonts/Anton.ttf)}
+html,body{margin:0;width:2400px;height:1600px;overflow:hidden;background:transparent}
+.stage{position:absolute;left:0;top:0;width:2400px;height:1600px;perspective:3200px}
+.floor{position:absolute;left:300px;right:300px;top:1300px;height:200px;background:radial-gradient(ellipse at 50% 30%,rgba(0,0,0,.75),rgba(0,0,0,0) 65%);filter:blur(18px)}
+.book{position:absolute;left:1010px;top:170px;width:800px;height:1120px;transform-style:preserve-3d;transform:rotateY(-24deg) rotateX(4deg)}
+.front{position:absolute;inset:0;background:url(file:///C:/Users/PC/AppData/Local/Temp/claude/6e60ed90514f9a6a/92185747-57a6-40fb-ba41-cf24f325ddad/scratchpad/stickman/ebook/build/cover.png) center/cover;border-radius:4px 14px 14px 4px;transform:translateZ(36px);box-shadow:inset 6px 0 10px rgba(255,255,255,.08),inset -2px 0 0 rgba(255,255,255,.06)}
+.front::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(105deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,0) 22%,rgba(255,255,255,0) 70%,rgba(255,255,255,.05) 100%)}
+.front::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:3px;background:rgba(0,0,0,.35);z-index:2}
+.pages{position:absolute;right:0;top:8px;bottom:8px;width:72px;transform-origin:right;transform:rotateY(90deg) translateX(36px);background:repeating-linear-gradient(90deg,#e9edf2 0 2px,#cfd5dd 2px 4px)}
+.spine{position:absolute;left:0;top:0;bottom:0;width:72px;transform-origin:left;transform:rotateY(-90deg) translateX(-36px);background:#0b1016}
+.back{position:absolute;inset:0;background:#06080b;transform:translateZ(-36px)}
+.copy{position:absolute;left:220px;top:420px;width:700px;color:#e8edf4}
+.k{font:800 26px/1 BarlowSC;letter-spacing:.26em;text-transform:uppercase;color:#3dd6ff;margin-bottom:28px}
+.h{font:400 104px/.95 Anton;text-transform:uppercase}
+.h span{color:#3dd6ff}
+.s{font:600 34px/1.35 Barlow;color:#c9d3df;margin:34px 0 40px}
+.pill{display:inline-block;font:800 24px/1 BarlowSC;letter-spacing:.18em;padding:18px 26px;border:2px solid #3dd6ff;border-radius:999px;color:#3dd6ff}
+.list{font:600 28px/1.9 Barlow;color:#9aa7b8;margin-top:40px}
+.list b{color:#fff}
+</style></head><body><div class="stage">
+<div class="book"><div class="back"></div><div class="spine"></div><div class="pages"></div><div class="front"></div></div>
+</div></body></html>

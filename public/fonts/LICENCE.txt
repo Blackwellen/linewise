@@ -1,0 +1,1 @@
+Anton (Vernon Adams) and Barlow Semi Condensed (Jeremy Tribby): SIL Open Font License 1.1, from fonts.google.com. Mapped in index.tpl.html to the family names Impact and Bahnschrift so local and farm renders match.

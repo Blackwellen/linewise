@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+.vercel
+*.log
+.data/
+screenshots/_raw/
+tsconfig.tsbuildinfo
+next-env.d.ts
+private/

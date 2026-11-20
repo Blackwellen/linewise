@@ -1,0 +1,10 @@
+home       mobile   performance=87 accessibility=100 best-practices=100 seo=100 LCP=3.9 s CLS=0.001 TBT=110 ms
+home       desktop  performance=99 accessibility=100 best-practices=100 seo=100 LCP=0.8 s CLS=0.002 TBT=10 ms
+checkout   mobile   performance=92 accessibility=100 best-practices=100 seo=69 LCP=3.3 s CLS=0.004 TBT=70 ms
+checkout   desktop  performance=100 accessibility=100 best-practices=100 seo=69 LCP=0.7 s CLS=0.004 TBT=0 ms
+advertise  mobile   performance=92 accessibility=100 best-practices=100 seo=100 LCP=3.3 s CLS=0 TBT=70 ms
+advertise  desktop  performance=100 accessibility=100 best-practices=100 seo=100 LCP=0.7 s CLS=0.001 TBT=0 ms
+terms      mobile   performance=96 accessibility=100 best-practices=100 seo=100 LCP=2.6 s CLS=0.001 TBT=70 ms
+terms      desktop  performance=100 accessibility=100 best-practices=100 seo=100 LCP=0.7 s CLS=0.002 TBT=10 ms
+privacy    mobile   performance=97 accessibility=100 best-practices=100 seo=100 LCP=2.6 s CLS=0 TBT=90 ms
+privacy    desktop  performance=100 accessibility=100 best-practices=100 seo=100 LCP=0.7 s CLS=0.001 TBT=0 ms
