@@ -46,7 +46,7 @@ export const DOWNLOAD_LIMITS = {
 };
 
 export const FILES = {
-  book: { key: 'v2/linewise-how-to-make-viral-stickman-shorts.pdf', filename: 'Linewise - How to Make Viral Stickman Shorts (2nd edition).pdf', label: 'The e-book (PDF, 90 pages)' },
-  bonus: { key: 'v2/linewise-bonus-pack-templates.pdf', filename: 'Linewise - Bonus Pack Templates (2nd edition).pdf', label: 'The bonus pack (PDF, 13 pages)' },
+  book: { key: 'v3/linewise-how-to-make-viral-stickman-shorts.pdf', filename: 'Linewise - How to Make Viral Stickman Shorts (2nd edition).pdf', label: 'The e-book (PDF, 90 pages)' },
+  bonus: { key: 'v3/linewise-bonus-pack-templates.pdf', filename: 'Linewise - Bonus Pack Templates (2nd edition).pdf', label: 'The bonus pack (PDF, 13 pages)' },
 } as const;
 export type FileId = keyof typeof FILES;

@@ -19,8 +19,8 @@ IMG = PUB / 'img'
 for d in [IMG, IMG / 'pages', IMG / 'stills', PUB / 'fonts', PUB / 'media', PUB / 'sample', ROOT / 'app', ROOT / 'private']:
     d.mkdir(parents=True, exist_ok=True)
 
-BOOK = EB / 'Linewise - How to Make Viral Stickman Shorts.pdf'
-BONUS = EB / 'Linewise - Bonus Pack Templates.pdf'
+BOOK = EB / 'Linewise - How to Make Viral Stickman Shorts (2nd edition).pdf'
+BONUS = EB / 'Linewise - Bonus Pack Templates (2nd edition).pdf'
 
 
 def webp(im, out, w=None, q=80):
@@ -85,8 +85,9 @@ for p in sorted((EB / 'build' / 'img').glob('*.jpg')):
 
 # 5. Page previews rendered from the real PDF
 doc = fitz.open(BOOK)
-pages = {3: 'contents', 6: 'ch1', 7: 'research', 8: 'rules', 13: 'ch2', 19: 'ch3', 21: 'scene-template', 24: 'worked-example',
-         26: 'ch4', 29: 'light', 36: 'ch5', 42: 'keyframes', 49: 'ch6', 54: 'ch7', 59: 'ch8', 64: 'streams', 65: 'ch9', 69: 'bonus'}
+# page numbers for the 2nd edition (90 pages); the 1st edition used 3/6/7/8/13/19/21/24/26/29/36/42/49/54/59/64/65/69
+pages = {3: 'contents', 6: 'ch1', 7: 'research', 8: 'rules', 13: 'ch2', 20: 'ch3', 22: 'scene-template', 25: 'worked-example',
+         28: 'ch4', 30: 'light', 38: 'ch5', 44: 'keyframes', 52: 'ch6', 58: 'ch7', 65: 'ch8', 70: 'streams', 71: 'ch9', 76: 'bonus'}
 for n, name in pages.items():
     pix = doc[n - 1].get_pixmap(matrix=fitz.Matrix(1.0, 1.0))
     im = Image.frombytes('RGB', (pix.width, pix.height), pix.samples)
@@ -101,7 +102,7 @@ for n, name in {1: 'bonus-1', 4: 'bonus-concepts', 10: 'bonus-calendar'}.items()
 sample = fitz.open()
 sample.insert_pdf(doc, from_page=0, to_page=0)
 sample.insert_pdf(doc, from_page=6, to_page=7)
-sample.set_metadata({'title': 'Linewise free sample: the 8 rules viral stickman Shorts share', 'author': 'Linewise (Blackwellen Ltd)'})
+sample.set_metadata({'title': 'Linewise free sample: the 8 rules viral stickman Shorts share (2nd edition)', 'author': 'Linewise (Blackwellen Ltd)'})
 sample.save(PUB / 'sample' / 'linewise-free-sample-8-rules.pdf', garbage=4, deflate=True)
 
 # 7. Paid files staged for the private R2 upload (never in public/)

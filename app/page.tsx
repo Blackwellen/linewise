@@ -34,7 +34,7 @@ function JsonLd() {
         '@type': ['Product', 'Book'],
         '@id': `${SITE_URL}/#book`,
         name: PRODUCT.fullName,
-        description: 'The complete system for wordless stickman Shorts, from first idea to a channel that grows. 90 pages, 9 chapters, 50 starter concepts, 7 printable templates. No drawing needed.',
+        description: 'The complete system for wordless stickman Shorts, from idea to upload. 90 pages, 9 chapters, 50 starter concepts, 7 printable templates. No drawing needed.',
         image: [`${SITE_URL}/img/cover-800.webp`, `${SITE_URL}/opengraph-image.jpg`],
         brand: { '@type': 'Brand', name: 'Linewise' },
         author: { '@type': 'Organization', name: 'Linewise' },
@@ -79,7 +79,7 @@ export default function Home() {
             <div className="hero-copy">
               <p className="kicker">The Linewise creator guide</p>
               <h1 id="hero-title" className="display">How to make <span className="cy">viral stickman</span> Shorts</h1>
-              <p className="lead">The complete system, from first idea to a channel that grows. Wordless 30-second films you can make in one phone app.</p>
+              <p className="lead">From idea to upload: the complete system. Wordless 30-second films you can make in one phone app.</p>
               <ul className="facts" aria-label="What you get">
                 <li><b>90</b> pages</li><li><b>9</b> chapters</li><li><b>50</b> starter concepts</li><li><b>7</b> printable templates</li>
               </ul>
@@ -100,7 +100,7 @@ export default function Home() {
               <div className="floor" aria-hidden="true" />
               <div className="contact" aria-hidden="true" />
               <img className="book" src="/img/book-880.webp" srcSet="/img/book-400.webp 400w, /img/book-520.webp 520w, /img/book-880.webp 880w" sizes="(max-width: 900px) 240px, 400px"
-                width={880} height={1289} alt="The Linewise e-book cover: How to Make Viral Stickman Shorts, the complete system from idea to millions of views" fetchPriority="high" />
+                width={880} height={1289} alt="The Linewise e-book cover, 2nd edition: How to Make Viral Stickman Shorts. From idea to upload: the complete system" fetchPriority="high" />
             </div>
           </div>
         </section>
