@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const toc: [string, string][] = [
   ['controller', 'Who is responsible'], ['collect', 'What we collect'], ['use', 'How we use it and our lawful bases'], ['share', 'Who we share it with'],
-  ['transfers', 'International transfers'], ['retention', 'How long we keep it'], ['security', 'Security'], ['rights', 'Your rights'], ['cookies', 'Cookies'], ['children', 'Children'], ['complain', 'Complaints'], ['changes', 'Changes'],
+  ['transfers', 'International transfers'], ['retention', 'How long we keep it'], ['security', 'Security'], ['rights', 'Your rights'], ['cookies', 'Cookies'], ['youtube', 'YouTube API Services'], ['children', 'Children'], ['complain', 'Complaints'], ['changes', 'Changes'],
 ];
 
 export default function Privacy() {
@@ -79,13 +79,24 @@ export default function Privacy() {
       <h2 id="cookies">9. Cookies</h2>
       <p>This website does not set analytics or advertising cookies. Stripe’s checkout page sets cookies it needs for payment security and fraud prevention. See our <Link href="/cookies">Cookie notice</Link>.</p>
 
-      <h2 id="children">10. Children</h2>
+      <h2 id="youtube">10. YouTube API Services</h2>
+      <p>We publish videos to our own YouTube channels (including Linewise) using an internal tool that uses <b>YouTube API Services</b>. By interacting with our YouTube channels and content, you are also subject to the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube Terms of Service</a>, and Google’s handling of data is covered by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</p>
+      <ul>
+        <li><b>What the tool accesses:</b> only our own YouTube accounts, which our own staff sign in to with Google OAuth. It is used to upload our own videos, set their titles, descriptions, tags, thumbnails and publish times, organise our playlists and update our channel details.</li>
+        <li><b>What it does not do:</b> it does not access, collect, store or share data about viewers or any other YouTube users, and it is not offered to the public.</li>
+        <li><b>What we store:</b> the IDs of the videos we upload and the sign-in tokens for our own accounts, kept only on our own computer. Nothing is shared with third parties or used for advertising.</li>
+        <li><b>Retention and deletion:</b> we keep upload records while the videos remain on our channels, and delete stored tokens when we stop using the tool.</li>
+        <li><b>Revoking access:</b> access granted to the tool can be revoked at any time from the Google security settings page at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">myaccount.google.com/permissions</a>.</li>
+      </ul>
+      <p>Questions about this section can be sent to {mail}.</p>
+
+      <h2 id="children">11. Children</h2>
       <p>This site is aimed at adults. Under-18s should only buy with the permission of a parent or guardian, and we do not knowingly collect data from children under 13.</p>
 
-      <h2 id="complain">11. Complaints</h2>
+      <h2 id="complain">12. Complaints</h2>
       <p>Please contact us first at {mail} so we can try to help. You also have the right to complain to the Information Commissioner’s Office (ICO), the UK data protection regulator: ico.org.uk/make-a-complaint or 0303 123 1113. If you live in the EU, you can contact your local data protection authority.</p>
 
-      <h2 id="changes">12. Changes</h2>
+      <h2 id="changes">13. Changes</h2>
       <p>We will update this policy when our practices change and show the date at the top. If a change materially affects how we use data you have already given us, we will tell you by email where we can.</p>
     </LegalPage>
   );

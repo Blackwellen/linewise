@@ -28,7 +28,7 @@ export const PRODUCT = {
   published: '2026-11',
 } as const;
 
-export const LEGAL_UPDATED = '18 November 2026';
+export const LEGAL_UPDATED = '21 November 2026';
 
 /** Wording shown next to the checkbox and stored with every order (Consumer Contracts Regulations 2013, reg. 36/37). */
 export const CONSENT_TEXT =
