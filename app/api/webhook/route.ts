@@ -2,7 +2,10 @@ import { NextResponse } from 'next/server';
 import type Stripe from 'stripe';
 import { stripe } from '@/lib/stripe';
 import { orderRef, orderToken } from '@/lib/orders';
-import { emailConfigured, sendDownloadEmail } from '@/lib/email';
+import { alertsConfigured, emailConfigured, sendDownloadEmail, sendOwnerAlert } from '@/lib/email';
+
+const money = (amount: number | null | undefined, currency: string | null | undefined) =>
+  `${((amount ?? 0) / 100).toFixed(2)} ${(currency ?? '').toUpperCase()}`;
 
 export const runtime = 'nodejs';
 
@@ -42,12 +45,36 @@ export async function POST(req: Request) {
       if (r.sent) update.receipt_email_sent_at = new Date().toISOString();
       else console.error('[webhook] download email failed', ref, r.reason);
     }
+    if (!pi.metadata?.sale_alert_sent_at && alertsConfigured()) {
+      const a = await sendOwnerAlert(`${event.livemode ? '' : '[TEST] '}New Linewise sale: ${money(session.amount_total, session.currency)} (${ref})`, [
+        ['Order', ref],
+        ['Amount', money(session.amount_total, session.currency)],
+        ['Tax', money(session.total_details?.amount_tax, session.currency)],
+        ['Buyer', email ?? 'unknown'],
+        ['Country', session.customer_details?.address?.country ?? 'unknown'],
+        ['Mode', event.livemode ? 'LIVE' : 'test'],
+        ['Time', new Date((event.created ?? Date.now() / 1000) * 1000).toISOString()],
+      ]);
+      if (a.sent) update.sale_alert_sent_at = new Date().toISOString();
+      else console.error('[webhook] sale alert failed', ref, a.reason);
+    }
     if (Object.keys(update).length) await stripe().paymentIntents.update(piId, { metadata: update });
     console.log('[webhook] order recorded', ref, session.id, event.livemode ? 'live' : 'test');
   }
   if (event.type === 'charge.refunded' || event.type === 'charge.dispute.created') {
     // Access checks read the charge state live from Stripe, so nothing to store here.
-    console.log('[webhook]', event.type, (event.data.object as { id: string }).id);
+    const obj = event.data.object as { id: string; amount?: number; amount_refunded?: number; currency?: string; reason?: string | null };
+    console.log('[webhook]', event.type, obj.id);
+    if (alertsConfigured()) {
+      const isDispute = event.type === 'charge.dispute.created';
+      await sendOwnerAlert(`${event.livemode ? '' : '[TEST] '}Linewise ${isDispute ? 'DISPUTE opened' : 'refund'}: ${money(isDispute ? obj.amount : obj.amount_refunded, obj.currency)}`, [
+        ['Type', isDispute ? 'Dispute (respond in Stripe before the deadline)' : 'Refund'],
+        ['Amount', money(isDispute ? obj.amount : obj.amount_refunded, obj.currency)],
+        ...(isDispute && obj.reason ? ([['Reason', obj.reason]] as [string, string][]) : []),
+        ['Stripe ID', obj.id],
+        ['Mode', event.livemode ? 'LIVE' : 'test'],
+      ]).catch(() => undefined);
+    }
   }
   return NextResponse.json({ received: true });
 }

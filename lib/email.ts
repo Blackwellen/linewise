@@ -37,3 +37,31 @@ export async function sendDownloadEmail(to: string, token: string, ref: string) 
   });
   return { sent: res.ok, reason: res.ok ? undefined : (`resend-${res.status}` as const) };
 }
+
+// Owner alerts (new sale, refund, dispute). Recipients come from SALE_ALERT_EMAILS
+// (comma-separated). Without it, no alert is sent and nothing else changes.
+function alertRecipients() {
+  return (process.env.SALE_ALERT_EMAILS || '').split(',').map((s) => s.trim()).filter(Boolean);
+}
+
+export function alertsConfigured() {
+  return emailConfigured() && alertRecipients().length > 0;
+}
+
+export async function sendOwnerAlert(subject: string, lines: [string, string][]) {
+  if (!alertsConfigured()) return { sent: false, reason: 'not-configured' as const };
+  const rows = lines.map(([k, v]) => `<tr><td style="padding:6px 14px 6px 0;color:#7d8a9c">${esc(k)}</td><td style="padding:6px 0;color:#111;font-weight:600">${esc(v)}</td></tr>`).join('');
+  const html = `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#111;padding:24px"><h2 style="margin:0 0 14px">${esc(subject)}</h2><table style="font-size:14px;border-collapse:collapse">${rows}</table><p style="font-size:12px;color:#7d8a9c;margin-top:18px">Linewise · ${esc(SITE_URL)} · details in the Stripe dashboard.</p></body></html>`;
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      from: process.env.RESEND_FROM,
+      to: alertRecipients(),
+      subject,
+      html,
+      text: lines.map(([k, v]) => `${k}: ${v}`).join('\n'),
+    }),
+  });
+  return { sent: res.ok, reason: res.ok ? undefined : (`resend-${res.status}` as const) };
+}
