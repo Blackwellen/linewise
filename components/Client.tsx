@@ -23,7 +23,7 @@ export function StickyCta({ price }: { price: string }) {
   }, []);
   return (
     <div className={`sticky${on ? ' on' : ''}`} aria-hidden={!on}>
-      <div className="t"><b>How to Make Viral Stickman Shorts</b>82-page PDF + bonus pack</div>
+      <div className="t"><b>How to Make Viral Stickman Shorts</b>90-page PDF + bonus pack</div>
       <a href="/checkout" className="btn btn-cy" tabIndex={on ? 0 : -1}>Get it · {price}</a>
     </div>
   );

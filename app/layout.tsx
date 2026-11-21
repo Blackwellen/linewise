@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: 'How to Make Viral Stickman Shorts: the Linewise e-book (£19.99)', template: '%s | Linewise' },
   description:
-    'The complete system for wordless stickman Shorts, from first idea to a channel that grows. 82 pages, 9 chapters, 50 starter concepts and 6 printable templates. No drawing needed. £19.99 PDF.',
+    'The complete system for wordless stickman Shorts, from first idea to a channel that grows. 90 pages, 9 chapters, 50 starter concepts and 7 printable templates. No drawing needed. £19.99 PDF.',
   applicationName: 'Linewise',
   authors: [{ name: 'Linewise' }],
   publisher: 'Blackwellen Ltd',

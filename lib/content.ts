@@ -2,14 +2,14 @@
 
 export const CHAPTERS = [
   { n: '01', img: 'ch1', t: 'Why stickman shorts go viral', d: 'The format spec, the two winning shapes and our research data.' },
-  { n: '02', img: 'ch2', t: 'Ideas', d: 'The 8 pillars, visual metaphors and 50 starter concepts.' },
-  { n: '03', img: 'ch3', t: 'Storyboarding', d: 'The scene template, hooks, loops and a frame-by-frame worked example.' },
+  { n: '02', img: 'ch2', t: 'Ideas', d: 'The 8 pillars, four lanes that work, visual metaphors and 50 starter concepts.' },
+  { n: '03', img: 'ch3', t: 'Storyboarding', d: 'The scene template, hooks, on-screen proof, loops and a frame-by-frame worked example.' },
   { n: '04', img: 'ch4', t: 'The look', d: 'Palette, light, depth, readable text, safe zones and lessons learned.' },
-  { n: '05', img: 'ch5', t: 'Animating step by step', d: 'One app, one rig: keyframes, easing, trails, impacts, camera, export.' },
-  { n: '06', img: 'ch6', t: 'Sound', d: 'SFX layering, cutting to BPM and drops, licensing and Content ID.' },
-  { n: '07', img: 'ch7', t: 'Posting and growth', d: 'Cadence, scheduling, captions, timing and the numbers that matter.' },
-  { n: '08', img: 'ch8', t: 'Monetisation', d: 'Realistic payouts, brand deals, products, affiliates and custom work.' },
-  { n: '09', img: 'ch9', t: 'Bonus: the code and AI pipeline', d: 'Concepts and architecture of an automated stickman studio.' },
+  { n: '05', img: 'ch5', t: 'Animating step by step', d: 'One app, one rig: keyframes, easing, motion that never freezes, trails, camera, export.' },
+  { n: '06', img: 'ch6', t: 'Sound', d: 'SFX layering, cutting to the drop, music licensing, credit lines and Content ID.' },
+  { n: '07', img: 'ch7', t: 'Posting and growth', d: 'Three a day, scheduling limits, captions, hashtag caps, staying original and the numbers that matter.' },
+  { n: '08', img: 'ch8', t: 'Monetisation', d: 'Realistic payouts (including the 2027 YouTube thresholds), brand deals, products and custom work.' },
+  { n: '09', img: 'ch9', t: 'Bonus: the code and AI pipeline', d: 'Architecture, quality gates and a render farm for an automated stickman studio.' },
 ] as const;
 
 export const PAGE_PREVIEWS = [
@@ -26,7 +26,7 @@ export const PAGE_PREVIEWS = [
 ] as const;
 
 export const FAQ = [
-  { q: 'What exactly do I get?', a: 'Two PDFs. The 82-page e-book: 9 chapters plus the bonus pack. And the Bonus Pack again as a separate 12-page printable PDF: two storyboard sheets, 50 starter concepts, an SFX cue sheet, a text-card style guide, a 30-day posting calendar, a pre-publish checklist and a media-kit template. You download both straight after payment.' },
+  { q: 'What exactly do I get?', a: 'Two PDFs. The 90-page e-book (2nd edition, November 2026): 9 chapters plus the bonus pack. And the Bonus Pack again as a separate 13-page printable PDF: two storyboard sheets, 50 starter concepts, an SFX cue sheet, a text-card style guide, a 30-day posting calendar (three a day), a pre-publish checklist, a media-kit template and caption, hashtag and credit blocks. You download both straight after payment.' },
   { q: 'Do I need to be able to draw or code?', a: 'No. The format is flat 2D stick figures on a near-black background. Chapter 5 teaches the whole animation workflow in one phone app, step by step. Chapter 9 explains how we automate production with code and AI, but it is an optional extra for later.' },
   { q: 'What equipment do I need?', a: 'A phone or a basic computer. The book works with free or cheap tools; it names the app we use and shows each step.' },
   { q: 'Will this make me money or get me views?', a: 'We cannot promise that, and nobody honest can. The book shows what the most-watched films in the genre have in common and how we make ours. Results depend on your work, your niche, timing and luck. Chapter 8 sets out realistic payouts so you can judge for yourself.' },

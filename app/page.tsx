@@ -34,7 +34,7 @@ function JsonLd() {
         '@type': ['Product', 'Book'],
         '@id': `${SITE_URL}/#book`,
         name: PRODUCT.fullName,
-        description: 'The complete system for wordless stickman Shorts, from first idea to a channel that grows. 82 pages, 9 chapters, 50 starter concepts, 6 printable templates. No drawing needed.',
+        description: 'The complete system for wordless stickman Shorts, from first idea to a channel that grows. 90 pages, 9 chapters, 50 starter concepts, 7 printable templates. No drawing needed.',
         image: [`${SITE_URL}/img/cover-800.webp`, `${SITE_URL}/opengraph-image.jpg`],
         brand: { '@type': 'Brand', name: 'Linewise' },
         author: { '@type': 'Organization', name: 'Linewise' },
@@ -81,7 +81,7 @@ export default function Home() {
               <h1 id="hero-title" className="display">How to make <span className="cy">viral stickman</span> Shorts</h1>
               <p className="lead">The complete system, from first idea to a channel that grows. Wordless 30-second films you can make in one phone app.</p>
               <ul className="facts" aria-label="What you get">
-                <li><b>82</b> pages</li><li><b>9</b> chapters</li><li><b>50</b> starter concepts</li><li><b>6</b> printable templates</li>
+                <li><b>90</b> pages</li><li><b>9</b> chapters</li><li><b>50</b> starter concepts</li><li><b>7</b> printable templates</li>
               </ul>
               <div className="cta-row" id="hero-cta">
                 <Link href="/checkout" className="btn btn-cy btn-xl">Get the e-book <span className="price">{PRODUCT.priceLabel}</span></Link>
@@ -279,8 +279,8 @@ export default function Home() {
                 </div>
               </div>
               <ul className="b">
-                <li><b>The e-book:</b> 82 pages, 9 chapters, PDF</li>
-                <li><b>The Bonus Pack:</b> 12-page printable PDF with 6 templates</li>
+                <li><b>The e-book:</b> 90 pages, 9 chapters, PDF (2nd edition, November 2026)</li>
+                <li><b>The Bonus Pack:</b> 13-page printable PDF with 7 templates</li>
                 <li><b>50 starter concepts</b> you can storyboard today</li>
                 <li><b>Chapter 9:</b> our code and AI pipeline, explained</li>
                 <li>Personal download page for 30 days, up to 15 downloads</li>

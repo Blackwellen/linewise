@@ -46,7 +46,7 @@ export default async function Checkout({ searchParams }: { searchParams: Promise
                 <img src="/img/cover-480.webp" alt="" width={76} height={106} />
                 <div>
                   <b>{PRODUCT.name}</b>
-                  <p className="small mute" style={{ margin: 0 }}>Linewise e-book (PDF, 82 pages) + Bonus Pack (PDF, 12 pages)</p>
+                  <p className="small mute" style={{ margin: 0 }}>Linewise e-book (PDF, 90 pages) + Bonus Pack (PDF, 13 pages)</p>
                 </div>
               </div>
               <div className="totals"><span>E-book + Bonus Pack</span><span>{PRODUCT.priceLabel}</span></div>

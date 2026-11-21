@@ -19,12 +19,12 @@ export const PRODUCT = {
   price: '19.99',
   priceLabel: '£19.99',
   currency: 'GBP',
-  pages: 82,
+  pages: 90,
   chapters: 9,
   concepts: 50,
-  templates: 6,
-  bonusPages: 12,
-  edition: 'First edition, November 2026',
+  templates: 7,
+  bonusPages: 13,
+  edition: '2nd edition, November 2026',
   published: '2026-11',
 } as const;
 
@@ -46,7 +46,7 @@ export const DOWNLOAD_LIMITS = {
 };
 
 export const FILES = {
-  book: { key: 'v1/linewise-how-to-make-viral-stickman-shorts.pdf', filename: 'Linewise - How to Make Viral Stickman Shorts.pdf', label: 'The e-book (PDF, 82 pages)' },
-  bonus: { key: 'v1/linewise-bonus-pack-templates.pdf', filename: 'Linewise - Bonus Pack Templates.pdf', label: 'The bonus pack (PDF, 12 pages)' },
+  book: { key: 'v2/linewise-how-to-make-viral-stickman-shorts.pdf', filename: 'Linewise - How to Make Viral Stickman Shorts (2nd edition).pdf', label: 'The e-book (PDF, 90 pages)' },
+  bonus: { key: 'v2/linewise-bonus-pack-templates.pdf', filename: 'Linewise - Bonus Pack Templates (2nd edition).pdf', label: 'The bonus pack (PDF, 13 pages)' },
 } as const;
 export type FileId = keyof typeof FILES;
