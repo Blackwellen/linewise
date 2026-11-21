@@ -41,20 +41,26 @@ export async function POST(req: Request) {
     }
     const email = session.customer_details?.email;
     if (email && !pi.metadata?.receipt_email_sent_at && emailConfigured()) {
-      const r = await sendDownloadEmail(email, orderToken(session), ref);
+      const r = await sendDownloadEmail(email, orderToken(session), ref, {
+        name: session.customer_details?.name,
+        amount: `£${((session.amount_total ?? 0) / 100).toFixed(2)}`,
+        tax: `£${((session.total_details?.amount_tax ?? 0) / 100).toFixed(2)}`,
+        date: new Date((event.created ?? Date.now() / 1000) * 1000).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/London' }),
+      });
       if (r.sent) update.receipt_email_sent_at = new Date().toISOString();
       else console.error('[webhook] download email failed', ref, r.reason);
     }
     if (!pi.metadata?.sale_alert_sent_at && alertsConfigured()) {
       const a = await sendOwnerAlert(`${event.livemode ? '' : '[TEST] '}New Linewise sale: ${money(session.amount_total, session.currency)} (${ref})`, [
+        ['Product', 'Linewise e-book + Bonus Pack'],
         ['Order', ref],
         ['Amount', money(session.amount_total, session.currency)],
         ['Tax', money(session.total_details?.amount_tax, session.currency)],
         ['Buyer', email ?? 'unknown'],
         ['Country', session.customer_details?.address?.country ?? 'unknown'],
         ['Mode', event.livemode ? 'LIVE' : 'test'],
-        ['Time', new Date((event.created ?? Date.now() / 1000) * 1000).toISOString()],
-      ]);
+        ['Time', new Date((event.created ?? Date.now() / 1000) * 1000).toLocaleString('en-GB', { timeZone: 'Europe/London' }) + ' UK'],
+      ], { heading: `You made a sale: ${money(session.amount_total, session.currency)}`, tone: 'sale' });
       if (a.sent) update.sale_alert_sent_at = new Date().toISOString();
       else console.error('[webhook] sale alert failed', ref, a.reason);
     }
@@ -73,7 +79,7 @@ export async function POST(req: Request) {
         ...(isDispute && obj.reason ? ([['Reason', obj.reason]] as [string, string][]) : []),
         ['Stripe ID', obj.id],
         ['Mode', event.livemode ? 'LIVE' : 'test'],
-      ]).catch(() => undefined);
+      ], { heading: isDispute ? 'A customer opened a dispute' : 'A refund was issued', tone: 'warn' }).catch(() => undefined);
     }
   }
   return NextResponse.json({ received: true });
