@@ -36,6 +36,12 @@ export function Footer() {
           <div>
             <img src="/img/linewise-lockup.webp" alt="Linewise" width={108} height={28} loading="lazy" />
             <p className="small mute">Short, wordless stickman films about discipline, focus and the small choices that shape a life. One step. Every day.</p>
+            <p className="small" style={{ marginTop: 14 }}>
+              <a href="https://www.youtube.com/@linewise.studios" target="_blank" rel="noopener noreferrer" aria-label="Linewise on YouTube" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                <svg width="26" height="18" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#FF0000" /><path d="M11 5.5v9l8-4.5z" fill="#fff" /></svg>
+                Watch Linewise on YouTube
+              </a>
+            </p>
           </div>
           <div>
             <p className="h4">The e-book</p>
